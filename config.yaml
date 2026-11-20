@@ -1,0 +1,26 @@
+environment: local
+
+authorization:
+  mode: local
+  # Populate only through the institutionally approved authorization process.
+  allowed_user_ids: []
+
+provider:
+  kind: disabled
+  endpoint: null
+  model: null
+
+retrieval:
+  top_k: 5
+  max_document_bytes: 10485760
+  max_excerpt_chars: 1200
+
+memory:
+  ttl_seconds: 3600
+  max_turns: 8
+  persistence: process_memory_only
+
+audit:
+  path: logs/audit.jsonl
+  retention_days: 90
+  include_question_or_answer: false
